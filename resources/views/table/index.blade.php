@@ -29,7 +29,7 @@
       <td> @if ( $item['onstock'] == 'true') {{ 'Áno' }} @else {{ 'Nie' }} @endif </td>
       <td> <img class="img-thumbnail" src="{{ $item['picturemain']; }}" alt=""> </td>
       <td> {{ $item['weight']; }} </td>
-      <td><input type="number" name="order_data[{{ $loop->index }}][quantity]" min="1" max="10"></td>
+      <td><input type="number" name="order_data[{{ $loop->index }}][quantity]" placeholder="0" min="1" max="10"></td>
     </tr>
   @endforeach
   </tbody>
