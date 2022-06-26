@@ -7,7 +7,8 @@
 <form action="{{ route('order.store') }}" method="POST">
   @csrf
   <input class="btn btn-custom" type="submit" value="Objednať">
-  <table class="table table-sm table-hover">
+  <div class="table-responsive">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>-</th>
@@ -33,5 +34,6 @@
   @endforeach
   </tbody>
 </table>
+</div>
 </form>
 @endsection
