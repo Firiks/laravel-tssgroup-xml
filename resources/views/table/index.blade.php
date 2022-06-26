@@ -4,21 +4,18 @@
 
 @section('content')
 
-
-<a href=""></a>
-
 <form action="{{ route('order.store') }}" method="POST">
   @csrf
   <input class="btn btn-custom" type="submit" value="Objednať">
-  <table class="table table-hover">
+  <table class="table table-sm table-hover">
     <thead>
       <tr>
         <th>-</th>
-        <th><a href="@if(app('request')->input('sort_by') === 'name') {{ route('index', ['sort_by_desc' => 'name']) }} @else {{ route('index', ['sort_by' => 'name']) }} @endif">Meno</a></th>
+        <th><a href="@if(app('request')->input('sort_by') === 'name') {{ route('index', ['sort_by_desc' => 'name']) }} @else {{ route('index', ['sort_by' => 'name']) }} @endif">Meno @if(app('request')->input('sort_by') === 'name')<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>@elseif(app('request')->input('sort_by_desc') === 'name') <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> @endif </a></th>
         <th>Popis</th>
-        <th><a href="@if(app('request')->input('sort_by') === 'onstock') {{ route('index', ['sort_by_desc' => 'onstock']) }} @else {{ route('index', ['sort_by' => 'onstock']) }} @endif">Na sklade</a></th>
+        <th><a href="@if(app('request')->input('sort_by') === 'onstock') {{ route('index', ['sort_by_desc' => 'onstock']) }} @else {{ route('index', ['sort_by' => 'onstock']) }} @endif">Na sklade @if(app('request')->input('sort_by') === 'onstock')<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> @elseif(app('request')->input('sort_by_desc') === 'onstock') <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>@endif</a></th>
         <th>Obrázok</th>
-        <th><a href="@if(app('request')->input('sort_by') === 'weight') {{ route('index', ['sort_by_desc' => 'weight']) }} @else {{ route('index', ['sort_by' => 'weight']) }} @endif">Váha</a></th>
+        <th><a href="@if(app('request')->input('sort_by') === 'weight') {{ route('index', ['sort_by_desc' => 'weight']) }} @else {{ route('index', ['sort_by' => 'weight']) }} @endif">Váha @if(app('request')->input('sort_by') === 'weight')<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> @elseif(app('request')->input('sort_by_desc') === 'weight') <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> @endif</a></th>
         <th>Ks do objednávky</th>
       </tr>
     </thead>
